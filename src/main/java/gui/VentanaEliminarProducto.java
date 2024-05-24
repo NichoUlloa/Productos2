@@ -53,11 +53,17 @@ public class VentanaEliminarProducto extends Ventana{
         this.add(campoID);
     }
 
-    // metodo eliminarProducto
+    // Método eliminarProducto validando su existencia
     private void eliminarProducto() throws ClassNotFoundException {
         ProductoController productoController = new ProductoController();
         int id = Integer.parseInt(campoID.getText());
-        productoController.eliminarProducto(id);
+        if (productoController.existeProducto(id)) {
+            productoController.eliminarProducto(id);
+            JOptionPane.showMessageDialog(this, "Producto eliminado correctamente");
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "El producto con ID " + id + " no existe", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     // Override del método actionPerformed
@@ -66,13 +72,14 @@ public class VentanaEliminarProducto extends Ventana{
         if (e.getSource() == botonEliminar) {
             try {
                 eliminarProducto();
-                JOptionPane.showMessageDialog(this, "Producto eliminado correctamente");
-                this.dispose();
             } catch (ClassNotFoundException classNotFoundException) {
-                JOptionPane.showMessageDialog(this, "Error al eliminar el producto");
+                JOptionPane.showMessageDialog(this, "Error al eliminar el producto", "Error", JOptionPane.ERROR_MESSAGE);
+            } catch (NumberFormatException numberFormatException) {
+                JOptionPane.showMessageDialog(this, "Por favor ingrese un ID válido", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else if (e.getSource() == botonCancelar) {
             this.dispose();
         }
     }
 }
+

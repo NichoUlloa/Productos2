@@ -4,28 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9079e0a2-e358-4050-8307-964184373ced" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/Ventana.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaBienvenida.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaBuscarProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaEliminarProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaModificarProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaRegistrarProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaTabla.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Categoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Marca.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Producto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/data/DBConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/data/DBGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/data/dao/ProductoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/principal/Principal.java" afterDir="false" />
+    <list default="true" id="9079e0a2-e358-4050-8307-964184373ced" name="Changes" comment="primero commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/VentanaBuscarProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaBuscarProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/VentanaEliminarProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaEliminarProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/VentanaModificarProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaModificarProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/VentanaRegistrarProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaRegistrarProducto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +29,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NichoUlloa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NichoUlloa/Productos2.git&quot;,
+    &quot;accountId&quot;: &quot;ad657d07-59ed-4433-8124-f604de13a408&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -177,12 +174,31 @@
       <workItem from="1715705176155" duration="518000" />
       <workItem from="1715708962629" duration="6000" />
       <workItem from="1715709281913" duration="644000" />
-      <workItem from="1715711399082" duration="3003000" />
+      <workItem from="1715711399082" duration="3234000" />
+      <workItem from="1715714708186" duration="432000" />
+      <workItem from="1715715222854" duration="194000" />
+      <workItem from="1716478630327" duration="888000" />
+      <workItem from="1716479625208" duration="2913000" />
+      <workItem from="1716488785144" duration="8000" />
+      <workItem from="1716507371617" duration="2374000" />
     </task>
+    <task id="LOCAL-00001" summary="primero commit">
+      <option name="closed" value="true" />
+      <created>1715714662869</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715714662869</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="primero commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="primero commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

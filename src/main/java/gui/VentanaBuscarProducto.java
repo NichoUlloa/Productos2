@@ -62,37 +62,47 @@ public class VentanaBuscarProducto extends Ventana{
         this.add(campoNombre);
     }
 
-    // metodo exportarDatosProducto
-    private String[][] exportarDatosProducto() throws ClassNotFoundException {
-        if(this.campoID.getText().length()==0 && this.campoNombre.getText().length()==0){
-            JOptionPane.showMessageDialog(this,"Ingrese datos validos");
-            return new String[0][0];
-        }
-        else if(this.campoID.getText().length()==0){
-            return ProductoController.mostrarProductosNombre(this.campoNombre.getText());
-        }
-        else{
-            return ProductoController.mostrarProductosID(Integer.parseInt(this.campoID.getText()));
+    // Metodo exportarDatosProducto
+    private String[][] exportarDatosProducto() throws ClassNotFoundException, IllegalArgumentException {
+        if (campoID.getText().length() == 0 && campoNombre.getText().length() == 0) {
+            throw new IllegalArgumentException("Ingrese datos válidos");
+        } else if (campoID.getText().length() == 0) {
+            return ProductoController.mostrarProductosNombre(campoNombre.getText());
+        } else {
+            return ProductoController.mostrarProductosID(Integer.parseInt(campoID.getText()));
         }
     }
-
 
     // Override del método actionPerformed
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == this.botonBuscar){
-            String[] nombreColumnas={"ID","Nombre","Marca","Categoria","Precio"};
+        if (e.getSource() == botonBuscar) {
+            String[] nombreColumnas = {"ID", "Nombre", "Marca", "Categoria", "Precio"};
             try {
-                VentanaTabla ventanaTabla= new VentanaTabla(exportarDatosProducto(),nombreColumnas);
-            } catch (ClassNotFoundException ex) {
+                String[][] datosProducto = exportarDatosProducto();
+                if (datosProducto.length == 0) {
+                    JOptionPane.showMessageDialog(this, "No se encontraron productos con los datos ingresados", "Error", JOptionPane.ERROR_MESSAGE);
+                    limpiarCampos();
+                } else {
+                    new VentanaTabla(datosProducto, nombreColumnas);
+                }
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Formato de número incorrecto: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                limpiarCampos();
+            } catch (ClassNotFoundException | IllegalArgumentException ex) {
+                JOptionPane.showMessageDialog(this, "Error al buscar el producto: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                limpiarCampos();
                 ex.printStackTrace();
             }
-        }
-        if (e.getSource() == this.botonCancelar){
-            VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
+        } else if (e.getSource() == botonCancelar) {
+            new VentanaBienvenida();
             this.dispose();
         }
+    }
 
+    private void limpiarCampos() {
+        campoID.setText("");
+        campoNombre.setText("");
     }
 
 

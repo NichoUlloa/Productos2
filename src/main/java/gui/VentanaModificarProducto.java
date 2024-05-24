@@ -74,12 +74,37 @@ public class VentanaModificarProducto extends Ventana{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == botonModificar) {
             try {
-                ProductoController.modificarProducto(Integer.parseInt(campoID.getText()), campoNombre.getText(), Double.parseDouble(campoPrecio.getText()));
+                int id = Integer.parseInt(campoID.getText());
+                String nombre = campoNombre.getText();
+                double precio = Double.parseDouble(campoPrecio.getText());
+
+                ProductoController productoController = new ProductoController();
+
+                if (productoController.existeProducto(id)) {
+                    productoController.modificarProducto(id, nombre, precio);
+                    JOptionPane.showMessageDialog(this, "Producto modificado correctamente");
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "El producto con ID " + id + " no existe", "Error", JOptionPane.ERROR_MESSAGE);
+                    limpiarCampos();
+                }
+
             } catch (ClassNotFoundException classNotFoundException) {
+                JOptionPane.showMessageDialog(this, "Error al modificar el producto", "Error", JOptionPane.ERROR_MESSAGE);
                 classNotFoundException.printStackTrace();
+                limpiarCampos();
+            } catch (NumberFormatException numberFormatException) {
+                JOptionPane.showMessageDialog(this, "Por favor ingrese datos válidos", "Error", JOptionPane.ERROR_MESSAGE);
+                limpiarCampos();
             }
         } else if (e.getSource() == botonCancelar) {
             this.dispose();
         }
+    }
+
+    private void limpiarCampos() {
+        campoID.setText("");
+        campoNombre.setText("");
+        campoPrecio.setText("");
     }
 }

@@ -86,33 +86,53 @@ public class VentanaRegistrarProducto extends Ventana{
         this.add(campoCategoria);
     }
 
-    private boolean registrarProducto() {
-        if (campoID.getText().length() == 0 || campoNombre.getText().length() == 0 || campoPrecio.getText().length() == 0) {
-            return false;
-        } else {
-            return true;
+    private boolean registrarProducto() throws ClassNotFoundException, IllegalArgumentException {
+        if (campoID.getText().isEmpty() || campoNombre.getText().isEmpty() || campoPrecio.getText().isEmpty()) {
+            throw new IllegalArgumentException("Todos los campos deben estar llenos.");
         }
+        int id = Integer.parseInt(campoID.getText());
+        String nombre = campoNombre.getText();
+        Marca marca = (Marca) campoMarca.getSelectedItem();
+        Categoria categoria = (Categoria) campoCategoria.getSelectedItem();
+        double precio = Double.parseDouble(campoPrecio.getText());
+
+        return ProductoController.registrarProducto(id, nombre, marca, categoria, precio);
     }
 
-    // Override del método actionPerformed
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == botonRegistrar) {
-            if (registrarProducto()) {
-                try {
-                    ProductoController.registrarProducto(Integer.parseInt(campoID.getText()) , campoNombre.getText(), (Marca) campoMarca.getSelectedItem(), (Categoria) campoCategoria.getSelectedItem(), Double.parseDouble(campoPrecio.getText()));
-                } catch (ClassNotFoundException ex) {
-                    throw new RuntimeException(ex);
+            try {
+                if (registrarProducto()) {
+                    JOptionPane.showMessageDialog(this, "Producto registrado correctamente");
+                    VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Producto ya ingresado o datos incorrectos");
+                    limpiarCampos();
                 }
-                JOptionPane.showMessageDialog(this, "Producto registrado exitosamente");
-                this.dispose();
-            } else {
-                JOptionPane.showMessageDialog(this, "Por favor, llene todos los campos");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Formato de número incorrecto: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                limpiarCampos();
+            } catch (ClassNotFoundException | IllegalArgumentException ex) {
+                JOptionPane.showMessageDialog(this, "Error al registrar el producto: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                limpiarCampos();
+                ex.printStackTrace();
             }
         } else if (e.getSource() == botonCancelar) {
+            VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
             this.dispose();
         }
     }
+
+    private void limpiarCampos() {
+        campoID.setText("");
+        campoNombre.setText("");
+        campoPrecio.setText("");
+        campoMarca.setSelectedIndex(0); // Suponiendo que el primer elemento es un marcador vacío o una opción válida
+        campoCategoria.setSelectedIndex(0); // Suponiendo que el primer elemento es un marcador vacío o una opción válida
+    }
+
 
 
 

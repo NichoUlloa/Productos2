@@ -67,9 +67,23 @@ public class ProductoController {
         DBConnector.closeConnection();
     }
 
+    // metodo eliminarProducto validando su existencia
     public static void eliminarProducto(int id) throws ClassNotFoundException {
         DSLContext query = DBGenerator.conectarBD(nombreDataBase);
-        ProductoDAO.eliminarProducto(query, id);
+        if (ProductoDAO.validarExistenciaProducto(query, "ID", id)) {
+            ProductoDAO.eliminarProducto(query, id);
+            DBConnector.closeConnection();
+        } else {
+            DBConnector.closeConnection();
+            throw new IllegalArgumentException("El producto no existe");
+        }
+    }
+
+    // Nuevo método para verificar existencia del producto
+    public static boolean existeProducto(int id) throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD(nombreDataBase);
+        boolean existe = ProductoDAO.validarExistenciaProducto(query, "ID", id);
         DBConnector.closeConnection();
+        return existe;
     }
 }
