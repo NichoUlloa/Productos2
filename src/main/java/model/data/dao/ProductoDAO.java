@@ -16,7 +16,7 @@ import static org.jooq.impl.DSL.name;
 import static org.jooq.impl.DSL.table;
 
 public class ProductoDAO {
-
+    // metodo para registrar un producto en la base de datos
     public static void registrarProducto(DSLContext query, Producto producto){
         Table tablaProducto= table(name("producto"));
         Field[] columnas = tablaProducto.fields("ID", "nombre","marca","Categoria","precio");
@@ -25,7 +25,7 @@ public class ProductoDAO {
                 .execute();
     }
 
-
+    // metodo para validar si un producto ya existe en la base de datos
     public static boolean validarExistenciaProducto(DSLContext query,String columnaTabla, Object dato){
         Result resultados = query.select().from(DSL.table("producto")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         if(resultados.size()>=1){
@@ -35,21 +35,21 @@ public class ProductoDAO {
             return false;
         }
     }
-
+    // metodo para modificar un producto en la base de datos
     public static void modificarProducto(DSLContext query, int id, String nombre, double precio){
         query.update(DSL.table("producto")).set(DSL.field("nombre"),nombre).set(DSL.field("precio"),precio).
                 where(DSL.field("Id").eq(id)).execute();
     }
-
+    // metodo para eliminar un producto en la base de datos
     public static void eliminarProducto(DSLContext query, int id){
         query.delete(DSL.table("producto")).where(DSL.field("Id").eq(id)).execute();
     }
-
+    // metodo para obtener un producto en la base de datos
     public List obtenerProductos(DSLContext query, String columnaTabla, Object dato){
         Result resultados = query.select().from(DSL.table("Producto")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaProductos(resultados);
     }
-
+    // metodo para obtener todos los productos en la base de datos
     private List obtenerListaProductos(Result resultados){
         List<Producto> productos= new ArrayList<>();
         for(int fila=0; fila<resultados.size();fila++){
@@ -63,6 +63,7 @@ public class ProductoDAO {
         }
         return productos;
     }
+    // metodo para exportar los datos de la base de datos
     public static String[][] exportarDatos(Result resultados){
         String[][] datosResultado=new String[resultados.size()][5]; // 5 por la cantidad de datos
         for(int registro = 0; registro < resultados.size(); registro ++){
@@ -74,20 +75,20 @@ public class ProductoDAO {
         }
         return datosResultado;
     }
-
+    // metodo para obtener todos los productos en la base de datos
     public static String[][] obtenerTodosLosProductos(DSLContext query){
         Table producto = DSL.table("producto");
         Result resultados = query.select().from(producto).fetch();
         return exportarDatos(resultados);
     }
-
+    // metodo para obtener un producto Por ID en la base de datos
     public static String[][] obtenerProductosID(DSLContext query, int id){
         Table producto = DSL.table("producto");
         Result resultados = query.select().from(producto)
                 .where(DSL.field("id").eq(id)).fetch();
         return exportarDatos(resultados);
     }
-
+    // metodo para obtener un producto Por nombre en la base de datos
     public static String[][] obtenerProductosNombre(DSLContext query, String nombre){
         Table producto = DSL.table("producto");
         Result resultados = query.select().from(producto)

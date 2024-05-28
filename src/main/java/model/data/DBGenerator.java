@@ -15,6 +15,7 @@ public class DBGenerator {
         crearBaseDato(create, nombreBD);
         create = actualizarConexion(connection, nombreBD);
         crearTablaProducto(create);
+        relacionarTabla(create, "Producto", "id", "Categoria");
         DBConnector.closeConnection();
     }
 

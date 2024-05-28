@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9079e0a2-e358-4050-8307-964184373ced" name="Changes" comment="primero commit">
+    <list default="true" id="9079e0a2-e358-4050-8307-964184373ced" name="Changes" comment="2do commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/VentanaBuscarProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaBuscarProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/VentanaEliminarProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaEliminarProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/VentanaModificarProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaModificarProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/VentanaRegistrarProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/VentanaRegistrarProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/data/DBGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/data/DBGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/data/dao/ProductoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/data/dao/ProductoDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +51,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Application.Principal.executor&quot;: &quot;Run&quot;,
     &quot;Application.VentanaBienvenida.executor&quot;: &quot;Run&quot;,
     &quot;Application.VentanaBuscarProducto.executor&quot;: &quot;Run&quot;,
@@ -153,8 +151,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
       </set>
     </attachedChunks>
   </component>
@@ -180,7 +178,18 @@
       <workItem from="1716478630327" duration="888000" />
       <workItem from="1716479625208" duration="2913000" />
       <workItem from="1716488785144" duration="8000" />
-      <workItem from="1716507371617" duration="2374000" />
+      <workItem from="1716507371617" duration="3015000" />
+      <workItem from="1716598927758" duration="633000" />
+      <workItem from="1716599708810" duration="1211000" />
+      <workItem from="1716668217664" duration="603000" />
+      <workItem from="1716668853586" duration="7377000" />
+      <workItem from="1716692551001" duration="2275000" />
+      <workItem from="1716761079444" duration="3758000" />
+      <workItem from="1716814617778" duration="61000" />
+      <workItem from="1716856554658" duration="638000" />
+      <workItem from="1716857242354" duration="997000" />
+      <workItem from="1716858645564" duration="2594000" />
+      <workItem from="1716902477839" duration="4566000" />
     </task>
     <task id="LOCAL-00001" summary="primero commit">
       <option name="closed" value="true" />
@@ -190,15 +199,33 @@
       <option name="project" value="LOCAL" />
       <updated>1715714662869</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2do commit">
+      <option name="closed" value="true" />
+      <created>1716512141102</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716512141102</updated>
+    </task>
+    <task id="LOCAL-00003" summary="2do commit">
+      <option name="closed" value="true" />
+      <created>1716512149319</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716512149319</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="primero commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="primero commit" />
+    <MESSAGE value="2do commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="2do commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
